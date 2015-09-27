@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{D81B1BB2-EE0F-C75D-027D-E195CBCBD171}</ProjectGuid>
+	<ProjectGuid>{2D9D4176-B219-D431-15E7-2A8C2FA37BFC}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_5_1_3;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_1_3;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_32;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,13 +39,90 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Plugins\Soomla\Core\AndroidImpl\KeyValueStorageAndroid.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\AndroidImpl\RewardStorageAndroid.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Config\CoreSettings.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Config\ISoomlaPostBuildTool.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Config\ISoomlaSettings.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Config\ObjectDictionary.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Config\SoomlaEditorScript.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Config\SoomlaPostBuildTools.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Config\UnityDictionary.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Config\android\ISoomlaManifestTools.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Config\android\SoomlaAndroidUtil.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Config\android\SoomlaManifestTools.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\CoreEvents.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\IOSImpl\KeyValueStorageIOS.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\IOSImpl\RewardStorageIOS.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\JSONObject.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\NullCheckable.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\Schedule.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\SoomlaEntity.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\SoomlaExtensions.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\SoomlaUtils.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\WPImpl\KeyValueStorageWP.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\WPImpl\RewardStorageWP.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\data\JSONConsts.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\data\KeyValueStorage.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\data\RewardStorage.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\rewards\BadgeReward.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\rewards\RandomReward.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\rewards\Reward.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Core\rewards\SequenceReward.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\AndroidImpl\AndroidJNIHandler.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\AndroidImpl\SoomlaStoreAndroid.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\AndroidImpl\StoreEventPusherAndroid.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\AndroidImpl\StoreInfoAndroid.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\AndroidImpl\VirtualCurrencyStorageAndroid.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\AndroidImpl\VirtualGoodsStorageAndroid.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\Config\StoreManifestTools.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\Config\StoreSettings.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\IOSImpl\IOS_ErrorCodes.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\IOSImpl\SoomlaStoreIOS.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\IOSImpl\StoreEventPusherIOS.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\IOSImpl\StoreInfoIOS.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\IOSImpl\VirtualCurrencyStorageIOS.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\IOSImpl\VirtualGoodsStorageIOS.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\IStoreAssets.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\SoomlaStore.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\StoreEvents.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\StoreInventory.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\WPImpl\SoomlaStoreWP.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\WPImpl\StoreEventPusherWP.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\WPImpl\StoreInfoWP.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\WPImpl\VirtualCurrencyStorageWP.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\WPImpl\VirtualGoodsStorageWP.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\data\StoreInfo.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\data\StoreJSONConsts.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\data\VirtualCurrencyStorage.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\data\VirtualGoodsStorage.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\data\VirtualItemStorage.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\MarketItem.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\PurchasableVirtualItem.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\VirtualCategory.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\VirtualItem.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\virtualCurrencies\VirtualCurrency.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\virtualCurrencies\VirtualCurrencyPack.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\virtualGoods\EquippableVG.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\virtualGoods\LifetimeVG.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\virtualGoods\SingleUsePackVG.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\virtualGoods\SingleUseVG.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\virtualGoods\UpgradeVG.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\domain\virtualGoods\VirtualGood.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\exceptions\InsufficientFundsException.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\exceptions\NotEnoughGoodsException.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\exceptions\VirtualItemNotFoundException.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\purchaseTypes\PurchaseType.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\purchaseTypes\PurchaseWithMarket.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\purchaseTypes\PurchaseWithVirtualItem.cs" />
+     <Compile Include="Assets\Plugins\Soomla\Store\rewards\VirtualItemReward.cs" />
      <Compile Include="Assets\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ar\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-am\common_strings.xml" />
@@ -64,6 +141,7 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-fr-rCA\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-en-rIN\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\admob_iap_style.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-en-rAU\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-nl\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-fr\common_strings.xml" />
@@ -113,6 +191,7 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-tl\common_strings.xml" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-pt-rPT\common_strings.xml" />
+     <None Include="Assets\Plugins\WP8\IAPMock.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-hu\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-mr-rIN\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ko\common_strings.xml" />
@@ -160,16 +239,22 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-km-rKH\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-en-rGB\common_strings.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="soomla-wp-core">
+ <HintPath>C:/Users/max/Desktop/g/Assets/Plugins/soomla-wp-core.dll</HintPath>
+ </Reference>
+ <Reference Include="wp-store">
+ <HintPath>C:/Users/max/Desktop/g/Assets/Plugins/wp-store.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

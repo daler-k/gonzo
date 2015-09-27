@@ -4,8 +4,8 @@ using System.Collections;
 public static class SaveManager : object 
 {
     public const int MAX_COINS_AMMOUNT = 100000;
-    public const int MAX_SPEED_AMMOUNT = 8;
-    public const int MAX_BOMB_AMMOUNT = 8;
+    public const int MAX_SPEED_AMMOUNT = 99;
+    public const int MAX_BOMB_AMMOUNT = 99;
 
 	public static int coinAmmount = 750;                   //The ammount of coins the player has
     public static int bestDistance = 0;                     //The best distance the player has reached
@@ -14,6 +14,7 @@ public static class SaveManager : object
     public static int shield = 2;                           //The ammount of shield power ups the player has
     public static int sonicWave = 2;                        //The ammount of sonic wave power ups the player has
     public static int revive = 0;                           //The ammount of revive power ups the player has
+	public static int isFBShared = 0;
 
 	public static int currentSkinID = 0;                    //The current submarine skin ID (0 is the default skin)
 	public static int skin2Unlocked = 0;                    //Hold the skin 2 owned state
@@ -41,6 +42,7 @@ public static class SaveManager : object
             sonicWave = PlayerPrefs.GetInt("Sonic Wave");
             revive = PlayerPrefs.GetInt("Revive");
 
+			isFBShared = PlayerPrefs.GetInt ("Facebook", isFBShared);
             audioEnabled = PlayerPrefs.GetInt("AudioEnabled");
         }
 
@@ -67,6 +69,7 @@ public static class SaveManager : object
         PlayerPrefs.SetInt("Shield", shield);
         PlayerPrefs.SetInt("Sonic Wave", sonicWave);
         PlayerPrefs.SetInt("Revive", revive);
+		PlayerPrefs.SetInt ("Facebook", isFBShared);
 
         PlayerPrefs.SetInt("AudioEnabled", audioEnabled);
 

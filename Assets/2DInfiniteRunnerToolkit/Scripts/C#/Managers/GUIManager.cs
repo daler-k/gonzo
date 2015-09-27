@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Soomla;
+using System.Collections.Generic;
+
 
 public class GUIManager : MonoBehaviour
 {
@@ -62,25 +65,34 @@ public class GUIManager : MonoBehaviour
 
     public AudioManager audioManager;
 
-    public const string AppId = "396436303886148";
-    public const string ShareUrl = "http://www.facebook.com/dialog/feed";
-    public string link;
-    public string pictureLink;
-    public string name;
-    public string caption;
-    public string description;
-    public string redirectUri;
+	const string AppId = "396436303886148";
+	const string ShareUrl = "http://www.facebook.com/dialog/feed";
+	const string pictureLink = "http://game.medplanets.com/assets/img/gonzo/ico.png";
+	const string name = "Gonzo Run";
+	const string description = "Join me. Help proud little penguin escape hordes of zombies";
+	const string caption = "Gonzo Run";
+	const string redirectUri = "http://facebook.com/";
+	const string link = "http://game.medplanets.com/gonzo.html";
+	
+	
+	public void ShareFacebook()
+	{
+		Application.OpenURL(ShareUrl + "?app_id=" + AppId + "&link=" + WWW.EscapeURL( link )+ 
+		                    "&picture=" + WWW.EscapeURL(pictureLink) + 
+		                    "&name=" + WWW.EscapeURL(name) + 
+		                    "&caption=" + WWW.EscapeURL(caption) + 
+		                    "&description=" + WWW.EscapeURL(description) + 
+		                    "&redirect_uri=" + WWW.EscapeURL(redirectUri));
+		int increaseAmount = 100;
+		if (SaveManager.isFBShared == 0) {
+			increaseAmount = 3000;
+		} 
+		SaveManager.coinAmmount += increaseAmount;
+		SaveManager.isFBShared++;
+		SaveManager.SaveData();
+		UpdateShopDisplay();
+	}
 
-    public void ShareFacebook()
-    {
-        Application.OpenURL(ShareUrl + "app_id=" + AppId +
-        "&link=" + WWW.EscapeURL(link) +
-        "&picture=" + WWW.EscapeURL(pictureLink) +
-        "&name=" + WWW.EscapeURL(name) +
-        "&caption=" + WWW.EscapeURL(caption) +
-        "&description=" + WWW.EscapeURL(description) +
-        "&redirect_uri=" + WWW.EscapeURL(redirectUri));
-    }
    
 
     //Called at the beginning of the game
@@ -88,8 +100,32 @@ public class GUIManager : MonoBehaviour
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         //Updates the audio buttons sprites
-        UpdateAudioButtons();
+		UpdateAudioButtons();
+		Soomla.Store.StoreEvents.OnMarketPurchase += onMarketPurchase;
+		Soomla.Store.SoomlaStore.Initialize (new Soomla.Store.Coins.SoomlaCoins ());
     }
+
+	public void onMarketPurchase( Soomla.Store.PurchasableVirtualItem pvi, string payload, Dictionary<string, string> extra) {
+		Debug.Log( "OnMarketPurchase: " + pvi.ItemId );
+		SaveManager.coinAmmount += 3000;
+		SaveManager.SaveData();
+		
+		//Notify mission manager, and update shop display
+		
+		UpdateShopDisplay();
+	}
+
+	public void BuyCoins()
+	{
+		//Decrease coin ammount, and increase powerup count
+		Soomla.Store.StoreInventory.BuyItem ("1000_coins");
+		//	SaveManager.coinAmmount += 300;
+		//	SaveManager.SaveData();
+		
+		//Notify mission manager, and update shop display
+		//	UpdateShopDisplay();
+		
+	}
     //Called at every frame
     void Update()
     {
@@ -101,8 +137,8 @@ public class GUIManager : MonoBehaviour
             coinText.text = AddDigitDisplay(collectedCoins, 4);
             distanceText.text = AddDigitDisplay(distanceTraveled, 5);
             healthText.text = AddDigitDisplay(currHealth, 3);
-            bombAmmount.text = AddDigitDisplay(SaveManager.sonicWave, 1);
-            speedAmmount.text = AddDigitDisplay(SaveManager.extraSpeed, 1);
+            bombAmmount.text = AddDigitDisplay(SaveManager.sonicWave);
+            speedAmmount.text = AddDigitDisplay(SaveManager.extraSpeed);
         }
     }
 
@@ -766,6 +802,18 @@ public class GUIManager : MonoBehaviour
 
         return s;
     }
+
+	private string AddDigitDisplay(int number)
+	{
+		string s = "";
+		
+		if (number < 10)
+			s = " ";
+		
+		s += number.ToString();
+		
+		return s;
+	}
     //Shows a mission notificator for 2 seconds, then hides it
     private IEnumerator MissionNotificationCountdown(Animator missionNotification, string boolName, int arrayID)
     {

@@ -1,0 +1,4 @@
+lastUpgrade=00921
+proj.AppId=218066020424
+web.ClientId=218066020424-7ag145f0eomi4l0vnkpsk4b993lr78b7.apps.googleusercontent.com
+android.SetupDone=true
