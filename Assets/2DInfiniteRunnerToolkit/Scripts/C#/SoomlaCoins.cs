@@ -55,7 +55,7 @@ namespace Soomla.Store.Coins {
 		/** Static Final Members **/
 		
 		
-		public const string THOUSANDCOINS_PACK_PRODUCT_ID = "1000_coins_pack";
+		public const string THOUSANDCOINS_PACK_PRODUCT_ID = "1000_coins_pack_gonzo";
 		public const string COINS_CURRENCY_ITEM_ID      = "currency_coins";
 		
 		
